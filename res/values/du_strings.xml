@@ -71,6 +71,7 @@
     <string name="header_category_custom">Customization</string>
     <string name="custom_title">Dirty Tweaks</string>
     <string name="themes_settings_title">Themes</string>
+    <string name="viper_title">Viper4Android</string>
 
     <!-- DU Changelog -->
     <string name="duchangelog">Changelog</string>
