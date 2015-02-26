@@ -1323,16 +1323,7 @@ public class SettingsActivity extends Activity
                                         PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
                             removeTile = true;
                         }
-                 } else if (id == R.id.viper_settings) {
-                     boolean supported = false;
-                     try {
-                         supported = (getPackageManager().getPackageInfo("com.vipercn.viper4android_v2", 0).versionCode > 0);
-                     } catch (PackageManager.NameNotFoundException e) {
-                     }
-                     if (!supported) {
-                         removeTile = true;
-                     }
-                    }
+                   }
                 } else if (id == R.id.print_settings) {
                     boolean hasPrintingSupport = getPackageManager().hasSystemFeature(
                             PackageManager.FEATURE_PRINTING);
@@ -1360,6 +1351,25 @@ public class SettingsActivity extends Activity
                     try {
                         supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
                     } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.viper_settings) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.vipercn.viper4android_v2", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.kernel_auditor) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.grarak.kerneladiutor", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+
                     }
                     if (!supported) {
                         removeTile = true;
