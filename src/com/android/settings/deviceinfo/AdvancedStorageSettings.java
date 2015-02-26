@@ -36,7 +36,7 @@ import android.view.ViewGroup;
 
 import com.android.internal.logging.MetricsLogger;
 
-import com.android.settings.screwd.SystemSettingSwitchPreference;
+import com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
