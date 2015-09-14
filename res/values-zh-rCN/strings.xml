@@ -5928,4 +5928,5 @@
   <string name="color_temperature_desc">使用更冷的显示颜色</string>
   <!-- Toast message letting the user know the color temperature setting is not immediate -->
   <string name="color_temperature_toast">关闭屏幕以应用颜色修改</string>
+  <string name="primary_sub_select_title">M-iM-;^M-XM-hM-.M-$4</string>
 </resources>
