@@ -71,6 +71,8 @@
     <string name="header_category_custom">Customization</string>
     <string name="custom_title">Dirty Tweaks</string>
     <string name="themes_settings_title">Themes</string>
+    <string name="viper_title">Viper4Android</string>
+    <string name="kernel_tweaker">KernelAudiutor</string>
 
     <!-- DU Changelog -->
     <string name="duchangelog">Changelog</string>
@@ -377,5 +379,14 @@
     <string name="four_second">4 s</string>
     <string name="fourhalf_second">4.5 s</string>
     <string name="five_second">5 s</string>
+
+   <!-- Advanced storage settings -->
+   <string name="storage_advanced_titlebar">Advanced Storage</string>
+   <string name="storage_menu_advanced">Advanced</string>
+
+   <!-- USB data automatic unlock -->
+   <string name="usb_data_auto_unlock_title">Unlock USB data</string>
+   <string name="usb_data_auto_unlock_summary">Allow unlocked data access to your phone\'s storage through USB (MTP, PTP)</string>
+   <string name="usb_data_auto_unlock_warning_summary">Your device will establish unprotected connections, everytime you connect it to a PC. Secured lockscreens disable this option automatically.\n\nThis is still an experimental feature, use with caution.</string>
 
 </resources>

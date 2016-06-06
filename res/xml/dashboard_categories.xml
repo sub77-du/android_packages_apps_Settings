@@ -120,8 +120,29 @@
             </intent>
         </dashboard-tile>
 
-    </dashboard-category>
+    <!-- Viper4Android -->
+        <dashboard-tile
+                android:id="@+id/viper_settings"
+                android:title="@string/viper_title"
+                android:icon="@drawable/ic_settings_v4a" >
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+                    android:targetPackage="com.vipercn.viper4android_v2" />
+        </dashboard-tile>
 
+    <!-- Kernel Auditor App -->
+        <dashboard-tile
+                android:id="@+id/kernel_auditor"
+                android:icon="@drawable/ic_screwd_performance_purp"
+                android:title="@string/kernel_tweaker">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.grarak.kerneladiutor"
+                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </dashboard-tile>
+    </dashboard-category>
+        
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
