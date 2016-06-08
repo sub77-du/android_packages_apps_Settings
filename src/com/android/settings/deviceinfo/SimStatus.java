@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.provider.Settings;
 import android.telephony.CellBroadcastMessage;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
@@ -258,14 +259,8 @@ public class SimStatus extends InstrumentedPreferenceActivity {
         }
 
         boolean show4GForLTE = false;
-        try {
-            Context con = createPackageContext("com.android.systemui", 0);
-            int id = con.getResources().getIdentifier("config_show4GForLTE",
-                    "bool", "com.android.systemui");
-            show4GForLTE = con.getResources().getBoolean(id);
-        } catch (NameNotFoundException e) {
-            Log.e(TAG, "NameNotFoundException for show4GFotLTE");
-        }
+        mShow4GForLTE = Settings.System.getIntForUser(this.getContentResolver(),
+                                    Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;
 
         if (networktype != null && networktype.equals("LTE") && show4GForLTE) {
             networktype = "4G";
