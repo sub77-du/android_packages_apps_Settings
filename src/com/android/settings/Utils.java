@@ -71,6 +71,7 @@ import android.provider.ContactsContract.Profile;
 import android.provider.ContactsContract.RawContacts;
 import android.provider.Settings;
 import android.service.persistentdata.PersistentDataBlockManager;
+import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -1275,5 +1276,19 @@ public final class Utils {
         return Settings.System.getInt(context.getContentResolver(),
                 Settings.System.DASHBOARD_SWITCHES, 0) != 1;
     }
-}
 
+    public static String getServiceStateString(int state, Resources res) {
+        switch (state) {
+            case ServiceState.STATE_IN_SERVICE:
+                return res.getString(R.string.radioInfo_service_in);
+            case ServiceState.STATE_OUT_OF_SERVICE:
+            case ServiceState.STATE_EMERGENCY_ONLY:
+                return res.getString(R.string.radioInfo_service_out);
+            case ServiceState.STATE_POWER_OFF:
+                return res.getString(R.string.radioInfo_service_off);
+            default:
+                return res.getString(R.string.radioInfo_unknown);
+        }
+    }
+
+}
