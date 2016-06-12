@@ -91,6 +91,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_ABOUTDU_PACKAGE_NAME = "com.dirtyunicorns.about";
     private static final String KEY_DTC_VERSION = "dtc_version";
     private static final String PROPERTY_DTC_VERSION = "ro.dtc.version";
+    private static final String KEY_UBER_AND = "uber_android";
+    private static final String KEY_UBER_KERNEL = "uber_kernel";
+    private static final String KEY_UBER_FLAGS = "uber_flags";
+    private static final String PROPERTY_AND_VERSION = "ro.tc.android";
+    private static final String PROPERTY_KERNEL_VERSION = "ro.tc.kernel";
+    private static final String PROPERTY_FLAGS_VERSION = "ro.uber.flags";
 
     private PreferenceScreen mDuUpdater;
     private PreferenceScreen mDuAbout;
@@ -140,6 +146,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_VERSION, "ro.mod.version");
         setValueSummary(KEY_DTC_VERSION, "ro.dtc.version");
+        findPreference(KEY_UBER_AND).setEnabled(true);
+        findPreference(KEY_UBER_KERNEL).setEnabled(true);
+        findPreference(KEY_UBER_FLAGS).setEnabled(true);
+        setValueSummary(KEY_UBER_AND, "ro.tc.android");
+        setValueSummary(KEY_UBER_KERNEL, "ro.tc.kernel");
+        setValueSummary(KEY_UBER_FLAGS, "ro.uber.flags");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -172,6 +184,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove DragonTC information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_DTC_VERSION,
                 PROPERTY_DTC_VERSION);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_AND,
+                PROPERTY_AND_VERSION);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_KERNEL,
+                PROPERTY_KERNEL_VERSION);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_FLAGS,
+                PROPERTY_FLAGS_VERSION);
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,
