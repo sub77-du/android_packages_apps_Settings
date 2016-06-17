@@ -381,4 +381,8 @@
     <!-- Volume settings - Volume adjustment sound -->
     <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
 
+    <!-- Clang version -->
+    <string name="dtc_version">Clang</string>
+    <string name="dtc_version_default">None</string>
+
 </resources>
