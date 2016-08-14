@@ -89,6 +89,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DUUPDATER_PACKAGE_NAME = "com.dirtyunicorns.duupdater";
     private static final String KEY_ABOUTDU = "aboutdu";
     private static final String KEY_ABOUTDU_PACKAGE_NAME = "com.dirtyunicorns.about";
+    private static final String KEY_DTC_VERSION = "dtc_version";
+    private static final String PROPERTY_DTC_VERSION = "ro.dtc.version";
 
     private PreferenceScreen mDuUpdater;
     private PreferenceScreen mDuAbout;
@@ -137,6 +139,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_VERSION, "ro.mod.version");
+        setValueSummary(KEY_DTC_VERSION, "ro.dtc.version");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -165,6 +168,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SAFETY_LEGAL,
                 PROPERTY_URL_SAFETYLEGAL);
+
+        // Remove DragonTC information if property is not present
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_DTC_VERSION,
+                PROPERTY_DTC_VERSION);
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,

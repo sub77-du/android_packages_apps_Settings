@@ -112,6 +112,13 @@
                 android:title="@string/security_patch"
                 android:summary="@string/device_info_default"/>
 
+       <!-- GCC build info -->
+       <Preference android:key="dtc_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/dtc_version"
+                android:summary="@string/dtc_version_default"
+                android:selectable="false" />
+
         <!-- DU version -->
         <Preference android:key="mod_version"
                 style="?android:preferenceInformationStyle"
